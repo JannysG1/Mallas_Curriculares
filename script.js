@@ -494,11 +494,10 @@ class MallaCurricularApp {
             statusClass = 'available';
             statusIcon = '';
             titleText = this.isMobile ? 'Toca para marcar como completada' : 'Click: Ver info • Click derecho: Marcar como completada';
-        }
-        
-        // Agregar botón de info solo en móvil
-        if (this.isMobile) {
-            infoButton = '<button class="info-btn" title="Ver prerrequisitos">ℹ️</button>';
+            // Agregar botón de info solo en móvil y solo cuando está disponible
+            if (this.isMobile) {
+                infoButton = '<button class="info-btn" title="Ver prerrequisitos">ℹ️</button>';
+            }
         }
         
         return `
