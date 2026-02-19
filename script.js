@@ -484,11 +484,11 @@ class MallaCurricularApp {
         
         if (completed) {
             statusClass = 'completed';
-            statusIcon = '<div class="checkmark">✓</div>';
+            statusIcon = this.isMobile ? '' : '<div class="checkmark">✓</div>';
             titleText = this.isMobile ? 'Toca para desmarcar' : 'Click: Ver info • Click derecho: Desmarcar';
         } else if (locked) {
             statusClass = 'locked';
-            statusIcon = '<div class="lockmark">🔒</div>';
+            statusIcon = this.isMobile ? '' : '<div class="lockmark">🔒</div>';
             titleText = this.isMobile ? 'Bloqueada - Completa prerrequisitos' : 'Bloqueada - Completa los prerrequisitos primero';
         } else {
             statusClass = 'available';
