@@ -1,0 +1,853 @@
+/* ============================================
+   Variables de diseño - Tonos Claros
+   ============================================ */
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #7B68EE;
+    --background-light: #F8F9FA;
+    --background-white: #FFFFFF;
+    --text-dark: #2C3E50;
+    --text-medium: #5A6C7D;
+    --text-light: #8A9BA8;
+    --border-light: #E1E8ED;
+    --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.15);
+    
+    /* Colores de materias */
+    --color-basicas: #FFE57F;
+    --color-formacion: #81D4FA;
+    --color-concentracion: #A5D6A7;
+    --color-general: #CE93D8;
+    --color-requisitos: #FFAB91;
+    --color-graduacion: #FFD54F;
+}
+
+/* ============================================
+   Reset y Estilos Base
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0F4F8 100%);
+    padding: 30px 0;
+    box-shadow: var(--shadow-medium);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+.logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+    background: white;
+    border-radius: 50%;
+}
+
+.header-text h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.header-text h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-medium);
+}
+
+/* ============================================
+   Selector de Carrera
+   ============================================ */
+.career-selector {
+    padding: 40px 0;
+}
+
+.selector-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.career-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 35px;
+    background: var(--background-white);
+    border: 3px solid var(--border-light);
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.career-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.career-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-icon {
+    font-size: 24px;
+}
+
+/* ============================================
+   Información de la Carrera
+   ============================================ */
+.career-info {
+    padding: 20px 0 40px;
+}
+
+.info-card {
+    background: var(--background-white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+    border-left: 5px solid var(--primary-color);
+}
+
+.info-card h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 16px;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   Sección de Resumen
+   ============================================ */
+.summary-section {
+    padding: 0 0 40px;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.summary-card {
+    background: var(--background-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.summary-card h4 {
+    font-size: 14px;
+    color: var(--text-medium);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.summary-card .hours {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* ============================================
+   Malla Curricular
+   ============================================ */
+.curriculum-section {
+    padding: 0 0 60px;
+}
+
+.curriculum-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.semester {
+    background: var(--background-white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-medium);
+}
+
+.semester-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.semester-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    box-shadow: var(--shadow-soft);
+}
+
+.semester-info h4 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.semester-info p {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.subject-card {
+    background: var(--background-light);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+    cursor: pointer;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.subject-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+.subject-card.basicas {
+    background: var(--color-basicas);
+    border-left-color: #FBC02D;
+}
+
+.subject-card.formacion {
+    background: var(--color-formacion);
+    border-left-color: #0288D1;
+}
+
+.subject-card.concentracion {
+    background: var(--color-concentracion);
+    border-left-color: #388E3C;
+}
+
+.subject-card.general {
+    background: var(--color-general);
+    border-left-color: #7B1FA2;
+}
+
+.subject-card.requisitos {
+    background: var(--color-requisitos);
+    border-left-color: #E64A19;
+}
+
+.subject-card.graduacion {
+    background: var(--color-graduacion);
+    border-left-color: #F57C00;
+}
+
+.subject-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    line-height: 1.3;
+    flex-grow: 1;
+}
+
+.subject-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text-medium);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.subject-code {
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.subject-credits {
+    font-weight: 600;
+}
+
+/* ============================================
+   Leyenda
+   ============================================ */
+.legend-section {
+    padding: 0 0 40px;
+}
+
+.legend-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background: var(--background-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-soft);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-medium);
+}
+
+.legend-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+    border: 2px solid white;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: linear-gradient(135deg, #2C3E50 0%, #3498DB 100%);
+    color: white;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.signature {
+    font-size: 16px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.signature strong {
+    font-weight: 700;
+    color: #FFD54F;
+    font-size: 18px;
+}
+
+/* ============================================
+   Animaciones
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .header-text h1 {
+        font-size: 22px;
+    }
+    
+    .header-text h2 {
+        font-size: 16px;
+    }
+    
+    .career-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .subjects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+    
+    .semester {
+        padding: 20px;
+    }
+    
+    .subject-card {
+        padding: 15px;
+        min-height: 100px;
+    }
+    
+    .summary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-placeholder {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .subjects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .semester-number {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+/* ============================================
+   Materias Completadas
+   ============================================ */
+.subject-card.completed {
+    opacity: 0.6;
+    position: relative;
+}
+
+.subject-card.completed .subject-name {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.subject-card.completed .checkmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #4CAF50, #45A049);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: var(--shadow-soft);
+    animation: checkmarkPop 0.3s ease-out;
+}
+
+@keyframes checkmarkPop {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ============================================
+   Materias Bloqueadas (No cumplen prerrequisitos)
+   ============================================ */
+.subject-card.locked {
+    opacity: 0.4;
+    filter: grayscale(60%);
+    cursor: not-allowed;
+    position: relative;
+}
+
+.subject-card.locked:hover {
+    transform: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.subject-card.locked .subject-name {
+    color: var(--text-light);
+}
+
+.subject-card.locked .lockmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #9E9E9E, #757575);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* ============================================
+   Materias Disponibles (Cumplen prerrequisitos)
+   ============================================ */
+.subject-card.available {
+    cursor: pointer;
+    position: relative;
+}
+
+.subject-card.available:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ============================================
+   Barra de Progreso
+   ============================================ */
+.progress-section {
+    padding: 30px 0;
+}
+
+.progress-container {
+    background: var(--background-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progress-header h3 {
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.reset-btn {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #FF6B6B, #C44569);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 30px;
+    background: var(--background-light);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.progress-text {
+    text-align: center;
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+/* ============================================
+   Modal
+   ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--background-white);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-hover);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 25px;
+    border-bottom: 2px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-subject-info {
+    background: var(--background-light);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-subject-info p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-medium);
+}
+
+.modal-subject-info p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-section {
+    margin-top: 20px;
+}
+
+.modal-section h4 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.prereq-list {
+    list-style: none;
+    padding: 0;
+}
+
+.prereq-list li {
+    padding: 12px 15px;
+    background: var(--background-light);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    font-size: 14px;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.prereq-list li:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-soft);
+}
+
+.prereq-list li.completed {
+    background: #E8F5E9;
+    border-left-color: #4CAF50;
+    color: #2E7D32;
+}
+
+.prereq-list li.pending {
+    background: #FFF3E0;
+    border-left-color: #FF9800;
+}
+
+/* ============================================
+   Instrucciones de Uso
+   ============================================ */
+.instructions-section {
+    padding: 20px 0 40px;
+}
+
+.instructions-card {
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+    color: white;
+    text-align: center;
+}
+
+.instructions-card p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.instructions-card strong {
+    font-weight: 600;
+}
+
+/* ============================================
+   Utilidades
+   ============================================ */
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}

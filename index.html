@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mallas Curriculares - EPN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <img src="logo_EPN.png" alt="EPN Logo" />
+                </div>
+                <div class="header-text">
+                    <h1>Escuela Politécnica Nacional</h1>
+                    <h2>Mallas Curriculares</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Selector de Carrera -->
+    <section class="career-selector">
+        <div class="container">
+            <div class="selector-buttons">
+                <button class="career-btn active" data-career="telecomunicaciones">
+                    <span class="btn-icon">📡</span>
+                    <span class="btn-text">Telecomunicaciones</span>
+                </button>
+                <button class="career-btn" data-career="tecnologias">
+                    <span class="btn-icon">💻</span>
+                    <span class="btn-text">Tecnologías de la Información</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de la Carrera -->
+    <section class="career-info">
+        <div class="container">
+            <div class="info-card">
+                <h3 id="careerTitle">Carrera: Telecomunicaciones</h3>
+                <p id="careerDegree"><strong>Título que otorga:</strong> Ingeniero/a en Telecomunicaciones</p>
+                <p><strong>Pensum:</strong> 2020</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instrucciones de Uso -->
+    <section class="instructions-section">
+        <div class="container">
+            <div class="instructions-card">
+                <p>💡 <strong>Instrucciones:</strong> Click en una materia para ver información y prerrequisitos</p>
+                <p>✅ Click derecho en una materia <strong>disponible</strong> para marcarla como completada</p>
+                <p>🔒 Las materias bloqueadas (difuminadas) se desbloquean al completar sus prerrequisitos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra de Progreso -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="progress-container">
+                <div class="progress-header">
+                    <h3>📊 Tu Progreso</h3>
+                    <button class="reset-btn" id="resetProgress">🔄 Reiniciar</button>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+                <p class="progress-text" id="progressText">0 de 0 materias completadas (0%)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resumen de Horas -->
+    <section class="summary-section">
+        <div class="container">
+            <h3 class="section-title">Resumen de Horas</h3>
+            <div class="summary-grid" id="summaryGrid">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Malla Curricular -->
+    <section class="curriculum-section">
+        <div class="container">
+            <h3 class="section-title">Malla Curricular por Semestres</h3>
+            <div class="curriculum-grid" id="curriculumGrid">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Leyenda -->
+    <section class="legend-section">
+        <div class="container">
+            <h3 class="section-title">Leyenda de Colores</h3>
+            <div class="legend-grid">
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #FFE57F;"></span>
+                    <span>Ciencias Básicas</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #81D4FA;"></span>
+                    <span>Formación Profesional</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #A5D6A7;"></span>
+                    <span>Concentración</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #CE93D8;"></span>
+                    <span>General/Humanística</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background: #FFAB91;"></span>
+                    <span>Requisitos/Otros</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 <span class="signature"><strong>Jannys Garrido</strong></span> Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para información de materias -->
+    <div class="modal" id="subjectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Nombre de la Materia</h3>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Se llenará dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
