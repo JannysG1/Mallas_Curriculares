@@ -1,6 +1,10 @@
-# Mallas Curriculares - TECNOLOGIAS DE LA INFORMACION Y TELECOMUNICACIONES - EPN
+# Mallas Curriculares - EPN
 
-Aplicación web moderna e interactiva para visualizar y seguir tu progreso en las mallas curriculares de las carreras de Telecomunicaciones y Tecnologías de la Información de la EPN.
+Aplicación web moderna e interactiva para visualizar y seguir tu progreso en las mallas curriculares de las carreras de Telecomunicaciones y Tecnologías de la Información de la Escuela Politécnica Nacional.
+
+## 🌐 Demo en Vivo
+
+Accede a la aplicación aquí: [https://jannysg1.github.io/Mallas_Curriculares/](https://jannysg1.github.io/Mallas_Curriculares/)
 
 ## 🎯 Características
 
@@ -187,7 +191,19 @@ La aplicación se adapta a diferentes tamaños de pantalla:
 - Usa el botón "🔄 Reiniciar" en la barra de progreso
 - O borra manualmente desde: F12 → Application → Local Storage
 
+## 👩‍💻 Autor
+
+**Jannys Garrido**
+- GitHub: [@JannysG1](https://github.com/JannysG1)
+- Email: jannys.garrido@epn.edu.ec
+
+## 📄 Licencia
+
+Este proyecto fue desarrollado para uso educativo en la Escuela Politécnica Nacional.
+
 ---
+
+⭐ Si te gusta este proyecto, dale una estrella en GitHub!
 
 💡 **Tip**: Usa esta aplicación durante toda tu carrera para visualizar tu progreso y planificar qué materias puedes tomar cada semestre según los prerrequisitos.
 
