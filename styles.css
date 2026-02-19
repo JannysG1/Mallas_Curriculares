@@ -545,7 +545,7 @@ body {
 .subject-card.completed .checkmark {
     position: absolute;
     top: 8px;
-    left: 8px;
+    right: 8px;
     width: 28px;
     height: 28px;
     background: linear-gradient(135deg, #4CAF50, #45A049);
@@ -595,7 +595,7 @@ body {
 .subject-card.locked .lockmark {
     position: absolute;
     top: 8px;
-    left: 8px;
+    right: 8px;
     width: 28px;
     height: 28px;
     background: linear-gradient(135deg, #9E9E9E, #757575);
