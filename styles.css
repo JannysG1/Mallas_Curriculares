@@ -578,13 +578,14 @@ body {
 .subject-card.locked {
     opacity: 0.4;
     filter: grayscale(60%);
-    cursor: not-allowed;
+    cursor: pointer;
     position: relative;
 }
 
 .subject-card.locked:hover {
-    transform: none;
-    box-shadow: var(--shadow-soft);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    opacity: 0.5;
 }
 
 .subject-card.locked .subject-name {
