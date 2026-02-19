@@ -361,6 +361,36 @@ body {
     font-weight: 600;
 }
 
+/* Botón de información para móvil */
+.info-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    background: rgba(74, 144, 226, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.info-btn:hover {
+    background: rgba(74, 144, 226, 1);
+    transform: scale(1.1);
+}
+
+.info-btn:active {
+    transform: scale(0.95);
+}
+
 /* ============================================
    Leyenda
    ============================================ */

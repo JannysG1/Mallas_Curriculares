@@ -9,7 +9,16 @@ class MallaCurricularApp {
         this.currentCareer = 'telecomunicaciones';
         this.data = window.CARRERAS_DATA;
         this.completedSubjects = this.loadProgress();
+        this.isMobile = this.detectMobile();
         this.init();
+    }
+
+    /**
+     * Detecta si es un dispositivo móvil
+     */
+    detectMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+            || window.innerWidth <= 768;
     }
 
     init() {
@@ -125,16 +134,16 @@ class MallaCurricularApp {
                 
                 if (completed) {
                     statusIcon = '<div class="checkmark">✓</div>';
-                    titleText = 'Click: Ver info • Click derecho: Desmarcar';
+                    titleText = this.isMobile ? 'Toca para desmarcar' : 'Click: Ver info • Click derecho: Desmarcar';
                 } else if (locked) {
                     statusIcon = '<div class="lockmark">🔒</div>';
-                    titleText = 'Bloqueada - Completa los prerrequisitos primero';
+                    titleText = this.isMobile ? 'Bloqueada - Completa prerrequisitos' : 'Bloqueada - Completa los prerrequisitos primero';
                 } else {
                     statusIcon = '';
-                    titleText = 'Click: Ver info • Click derecho: Marcar como completada';
+                    titleText = this.isMobile ? 'Toca para marcar como completada' : 'Click: Ver info • Click derecho: Marcar como completada';
                 }
                 
-                // Actualizar el ícono
+                // Actualizar el ícono (sin tocar el botón de info si existe)
                 const existingIcon = card.querySelector('.checkmark, .lockmark');
                 if (existingIcon) {
                     existingIcon.remove();
@@ -427,16 +436,34 @@ class MallaCurricularApp {
             semestreDiv.querySelectorAll('.subject-card').forEach(card => {
                 const codigo = card.dataset.codigo;
                 
-                // Click derecho para marcar/desmarcar
-                card.addEventListener('contextmenu', (e) => {
-                    e.preventDefault();
-                    this.toggleSubject(codigo);
-                });
+                if (this.isMobile) {
+                    // MÓVIL: Un tap marca/desmarca la materia
+                    card.addEventListener('click', (e) => {
+                        // Si se hace click en el botón de info, no marcar
+                        if (!e.target.closest('.info-btn')) {
+                            this.toggleSubject(codigo);
+                        }
+                    });
+                    
+                    // Botón de info para ver prerrequisitos
+                    const infoBtn = card.querySelector('.info-btn');
+                    if (infoBtn) {
+                        infoBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            this.showSubjectModal(codigo);
+                        });
+                    }
+                } else {
+                    // ESCRITORIO: Click derecho marca/desmarca, click izquierdo muestra info
+                    card.addEventListener('contextmenu', (e) => {
+                        e.preventDefault();
+                        this.toggleSubject(codigo);
+                    });
 
-                // Click para ver información
-                card.addEventListener('click', () => {
-                    this.showSubjectModal(codigo);
-                });
+                    card.addEventListener('click', () => {
+                        this.showSubjectModal(codigo);
+                    });
+                }
             });
         }, 0);
 
@@ -453,19 +480,25 @@ class MallaCurricularApp {
         let statusClass = '';
         let statusIcon = '';
         let titleText = '';
+        let infoButton = '';
         
         if (completed) {
             statusClass = 'completed';
             statusIcon = '<div class="checkmark">✓</div>';
-            titleText = 'Click: Ver info • Click derecho: Desmarcar';
+            titleText = this.isMobile ? 'Toca para desmarcar' : 'Click: Ver info • Click derecho: Desmarcar';
         } else if (locked) {
             statusClass = 'locked';
             statusIcon = '<div class="lockmark">🔒</div>';
-            titleText = 'Bloqueada - Completa los prerrequisitos primero';
+            titleText = this.isMobile ? 'Bloqueada - Completa prerrequisitos' : 'Bloqueada - Completa los prerrequisitos primero';
         } else {
             statusClass = 'available';
             statusIcon = '';
-            titleText = 'Click: Ver info • Click derecho: Marcar como completada';
+            titleText = this.isMobile ? 'Toca para marcar como completada' : 'Click: Ver info • Click derecho: Marcar como completada';
+        }
+        
+        // Agregar botón de info solo en móvil
+        if (this.isMobile) {
+            infoButton = '<button class="info-btn" title="Ver prerrequisitos">ℹ️</button>';
         }
         
         return `
@@ -478,6 +511,7 @@ class MallaCurricularApp {
                     <span class="subject-credits">${materia.creditos} CR</span>
                 </div>
                 ${statusIcon}
+                ${infoButton}
             </div>
         `;
     }
