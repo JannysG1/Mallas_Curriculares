@@ -365,7 +365,7 @@ body {
 .info-btn {
     position: absolute;
     top: 8px;
-    left: 8px;
+    right: 8px;
     width: 24px;
     height: 24px;
     background: rgba(74, 144, 226, 0.9);
@@ -389,6 +389,16 @@ body {
 
 .info-btn:active {
     transform: scale(0.95);
+}
+
+/* Ocultar botón info cuando la materia está completada (para no superponerse con checkmark) */
+.subject-card.completed .info-btn {
+    display: none;
+}
+
+/* Ocultar botón info cuando la materia está bloqueada (para no superponerse con lockmark) */
+.subject-card.locked .info-btn {
+    display: none;
 }
 
 /* ============================================
