@@ -391,16 +391,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Ocultar botón info cuando la materia está completada (para no superponerse con checkmark) */
-.subject-card.completed .info-btn {
-    display: none;
-}
-
-/* Ocultar botón info cuando la materia está bloqueada (para no superponerse con lockmark) */
-.subject-card.locked .info-btn {
-    display: none;
-}
-
 /* ============================================
    Leyenda
    ============================================ */
@@ -555,7 +545,7 @@ body {
 .subject-card.completed .checkmark {
     position: absolute;
     top: 8px;
-    right: 8px;
+    left: 8px;
     width: 28px;
     height: 28px;
     background: linear-gradient(135deg, #4CAF50, #45A049);
@@ -604,7 +594,7 @@ body {
 .subject-card.locked .lockmark {
     position: absolute;
     top: 8px;
-    right: 8px;
+    left: 8px;
     width: 28px;
     height: 28px;
     background: linear-gradient(135deg, #9E9E9E, #757575);
